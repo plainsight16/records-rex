@@ -25,7 +25,7 @@ Record-rex is a simple, yet powerful, PHP-based application designed for efficie
 1. **Clone the Repository**
 
    ```bash
-   git clone [https://github.com/yourusername/RecordKeeper.git](https://github.com/plainsight16/records-rex)
+   git clone https://github.com/plainsight16/records-rex
    ```
 
 2. **Navigate to the Project Directory**
