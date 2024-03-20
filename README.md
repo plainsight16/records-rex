@@ -87,9 +87,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Thanks to all the contributors who spend time to help make RecordKeeper better!
-- Special thanks to [ProjectName] libraries and frameworks we use.
-
-```
-
-Be sure to adjust the README to fit the details of your project, including its name, the specific technologies and versions you're using, installation instructions tailored to your setup, and any other unique features or constraints of your project.
+- Thanks to all the contributors who spend time to help make Record-rex better!
