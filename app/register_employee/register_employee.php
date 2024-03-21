@@ -69,16 +69,3 @@ if (isset($_POST['submit'])){
     }
 }
 ?>
-
-<!-- // // Hash password
-        $password_hash = password_hash($default_password, PASSWORD_DEFAULT);
-
-        // If there are no errors, insert data into database
-        $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, role, password_hash) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $first_name, $last_name, $email, $role, $password_hash);
-
-        if ($stmt->execute()){
-            echo "<div class='alert alert-success'>Employee account created successfully</div>";
-        } else {
-            echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
-        } -->
