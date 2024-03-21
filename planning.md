@@ -7,26 +7,26 @@ You are required to design and develop a Web application using your knowledge of
 
 
 ## Requirements Specification
-### Deliverables
-#### Core Functionalities
-1. Create a Database to store the different records
+1. A Database from where records would be generated
 	1. Main Entities
 		1. Product(3)
 		2. User
 		3. Order
 		4. Warehouse (3)
-2.  Php to manage the DB, this is where functionalities will come from
-	1. RetrieveRecords( would have time function to specify daily monthly or yearly: Default: Daily)
-	2. Insert Records
-    3. Search Records
-	4. Which Warehouse has which product
-	5. Distribution function? to automatically distribute incoming products to different warehouses.
-3. Create Roles to sign up and login
-	1. Roles: Manager and Employee
-	2. Different views for manager and employee?
-4. Frontend(html, css, JS): To display the records using a template created
-Programming Languages: HTML, CSS, Javascript, Php, MySql
 
+2. Users should have roles
+	1. Roles: Admin and Employee
+
+3. Users can Sign in, Sign out and Sign up
+
+
+
+#### Core Features
+	1. RetrieveRecords(Daily)
+	2. Which Warehouse has which product
+
+#### Additional Functionalites
+    1. Search Records
 
 
 Records Table
