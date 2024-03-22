@@ -5,7 +5,7 @@ if (isset($_POST['submit'])){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $default_password = $last_name;
+    $password = $last_name;
     $role = 2;
     // // $confirm_password = $_POST['confirm_password'];
 
@@ -49,14 +49,14 @@ if (isset($_POST['submit'])){
     } else {
         try{
             // Hash password
-            $password_hash = password_hash($default_password, PASSWORD_DEFAULT);
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
     
             // If there are no errors, insert data into database
-            $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, role, default_password) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, role, password) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("sssss", $first_name, $last_name, $email, $role, $password_hash);
     
             if ($stmt->execute()){
-                echo "<div class='alert alert-success'>Employee account created successfully. Default password: ".$default_password. "</div>";
+                echo "<div class='alert alert-success'>Employee account created successfully. Default password: ".$password. "</div>";
             } else {
                 echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
             }

@@ -17,7 +17,7 @@
             <div class="signin-content">
                 <div class="signin-body">
                     <h1>Login</h1>
-                    <form action="../records/app/login/login.php" method="post">
+                    <form action="../records-rex/app/login/login.php" method="post">
                         <label for="email">Email</label>
                         <input type="text" name="email" id="email" placeholder="Email" required>
                         

@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
 
     if ($user) {
-        if (password_verify(($password), $user['default_password'])) {
+        if (password_verify(($password), $user['password'])) {
             header('Location: ../homepage/index.php');
             exit();
         } else {
