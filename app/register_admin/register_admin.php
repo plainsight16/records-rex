@@ -12,7 +12,7 @@ if (isset($_POST['submit'])){
     $errors = array();
 
     // Check if fields are empty
-    if (empty($first_name) || empty($last_name) || empty($email) || empty($password) || empty($confirm_password)){
+    if (empty($first_name) || empty($last_name) || empty($email)){
         $errors[] = "All fields are required";
     }
     
@@ -48,14 +48,14 @@ if (isset($_POST['submit'])){
         }
     } else {
         // // Hash password
-        // $password_hash = password_hash($default_password, PASSWORD_DEFAULT);
+        $password_hash = password_hash($default_password, PASSWORD_DEFAULT);
 
         // If there are no errors, insert data into database
-        $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email) VALUES (?, ?, ?)");
-        $stmt->bind_param("ssss", $first_name, $last_name, $email);
+        $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, role, default_password) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $first_name, $last_name, $email, $role, $password_hash);
 
         if ($stmt->execute()){
-            echo "<div class='alert alert-success'>Admin account created successfully</div>";
+            echo "<div class='alert alert-success'>Admin account created successfully. Default password: ".$default_password. "</div>";
         } else {
             echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
         }

@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <p>Login</p>
-</body>
-</html>
+<?php
+require_once ('../db/dbconnect.php');
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM user WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+
+
+    if ($user) {
+        if (password_verify(($password), $user['default_password'])) {
+            header('Location: ../homepage/index.php');
+            exit();
+        } else {
+            echo "<div class='alert alert-danger'>Password does not match</div>";
+        }
+
+    } else {
+        echo "<div class='alert alert-danger'>Email does not exist. Contact Admin</div>";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
