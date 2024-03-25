@@ -1,43 +1,44 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="../base/app.css">
 </head>
-<body>
-    <div class="wrapper">
-        <div class="signup-page">
-            <!-- <div class="header-main">
-                <div class="header-login">
-                    <span>Already have an account?</span>
-                    <a href="../../index.php">Log in</a>
-                </div>
-            </div> -->
-            <div class="signup-content">
-                <div class="signup-body">
-                    <h1>Register Admin</h1>
-                    <form action="register_admin.php" method="post">
-                        <label for="first_name">First Name</label>
-                        <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
-                        
-                        <label for="last_name">Last Name</label>
-                        <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
 
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email" required>
-                        
-                        <!-- <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" required>
-                        
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required> -->
-                        
-                        <input type="submit" name="submit" value="CREATE AN ACCOUNT">
-                    </form>
-                </div>
+<body>
+    <section class="login-section">
+        <form action="" method="post" class="auth-form">
+            <p class="form-header">Create Account</p>
+            <p class="form-p">Enter your details to create an account</p>
+            <div class="input-group">
+                <label for="first_name">First Name</label>
+                <input type="text" name="email" placeholder="Johndoe@email.com">
             </div>
-        </div>
+            <div class="input-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="email" placeholder="Johndoe@email.com">
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" placeholder="Johndoe@email.com">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="text" name="password" placeholder="@JohnDoe123">
+            </div>
+            <div class="input-group">
+                <label for="password">Confirm Password</label>
+                <input type="text" name="confirm_password" placeholder="@JohnDoe123">
+            </div>
+            <button type="submit" class="submit-btn">Create Account</button>
+            <div class="auth-opts2">
+                <p class="link-form">Already have an account? <span>Sign In</span></p>
+            </div>
+        </form>
+    </section>
     </div>
 </body>
+
 </html>
