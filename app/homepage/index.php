@@ -83,46 +83,47 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>cell1_1</td>
-                            <td>cell2_1</td>
-                            <td>cell3_1</td>
-                            <td>cell4_1</td>
-                            <td>cell5_1</td>
-                            <td>cell6_1</td>
-                            <td>cell7_1</td>
-                            <td>cell8_1</td>
-                        </tr>
-                        <tr>
-                            <td>cell1_2</td>
-                            <td>cell2_2</td>
-                            <td>cell3_2</td>
-                            <td>cell4_2</td>
-                            <td>cell5_2</td>
-                            <td>cell6_2</td>
-                            <td>cell7_2</td>
-                            <td>cell8_2</td>
-                        </tr>
-                        <tr>
-                            <td>cell1_3</td>
-                            <td>cell2_3</td>
-                            <td>cell3_3</td>
-                            <td>cell4_3</td>
-                            <td>cell5_3</td>
-                            <td>cell6_3</td>
-                            <td>cell7_3</td>
-                            <td>cell8_3</td>
-                        </tr>
-                        <tr>
-                            <td>cell1_4</td>
-                            <td>cell2_4</td>
-                            <td>cell3_4</td>
-                            <td>cell4_4</td>
-                            <td>cell5_4</td>
-                            <td>cell6_4</td>
-                            <td>cell7_4</td>
-                            <td>cell8_4</td>
-                        </tr>
+                        <?php
+                        include_once ("../db/dbconnect.php");
+                        $sql = "SELECT * FROM `record`;";
+
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                ?>
+                                <tr class="record">
+                                    <td>
+                                        <?php echo $rows['OrderDate']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Handled_by']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Product']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Description']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Warehouse']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Customer']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Price']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $rows['Quantity']; ?>
+                                    </td>
+                                    <td><a href="editform.php?id=<?php echo $row['id']; ?>"> Edit </a> | <a href="#"
+                                            id="<?php echo $row['id']; ?>" class="delbutton" title="Click To Delete">Delete</a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                        ?>
                     </tbody>
                 </table>
             </section>
