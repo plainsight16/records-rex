@@ -71,13 +71,14 @@
                 <table class="blueTable">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Ordered At</th>
                             <th>Handled By</th>
-                            <th>Customer</th>
                             <th>Product</th>
+                            <th>Description</th>
                             <th>Warehouse</th>
-                            <th>Status</th>
+                            <th>Customer</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
                             <th>Action</th>
                         </tr>
                     </thead>
