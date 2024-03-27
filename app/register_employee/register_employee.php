@@ -5,14 +5,14 @@ if (isset($_POST['submit'])){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $default_password = $last_name;
+    $password = $last_name;
     $role = 2;
-    // $confirm_password = $_POST['confirm_password'];
+    // // $confirm_password = $_POST['confirm_password'];
 
     $errors = array();
 
     // Check if fields are empty
-    if (empty($first_name) || empty($last_name) || empty($email) || empty($password) || empty($confirm_password)){
+    if (empty($first_name) || empty($last_name) || empty($email)){
         $errors[] = "All fields are required";
     }
     
@@ -31,15 +31,15 @@ if (isset($_POST['submit'])){
         $errors[] = "Email already exists";
     }
 
-    // // Check if password is at least 8 characters
-    // if (strlen($password) < 8){
-    //     $errors[] = "Password must be at least 8 characters";
-    // }
+    // // // Check if password is at least 8 characters
+    // // if (strlen($password) < 8){
+    // //     $errors[] = "Password must be at least 8 characters";
+    // // }
 
-    // // Check if password matches
-    // if ($password != $confirm_password){
-    //     $errors[] = "Passwords do not match";
-    // } 
+    // // // Check if password matches
+    // // if ($password != $confirm_password){
+    // //     $errors[] = "Passwords do not match";
+    // // } 
 
     // Check if there are any errors
     if (count($errors) > 0){
@@ -47,22 +47,25 @@ if (isset($_POST['submit'])){
             echo "<div class='alert alert-danger'>$error</div>";
         }
     } else {
-        // // Hash password
-        // $password_hash = password_hash($default_password, PASSWORD_DEFAULT);
-
-        // If there are no errors, insert data into database
-        $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email) VALUES (?, ?, ?)");
-        $stmt->bind_param("ssss", $first_name, $last_name, $email);
-
-        if ($stmt->execute()){
-            echo "<div class='alert alert-success'>Employee account created successfully</div>";
-        } else {
-            echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
+        try{
+            // Hash password
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    
+            // If there are no errors, insert data into database
+            $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, role, password) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssss", $first_name, $last_name, $email, $role, $password_hash);
+    
+            if ($stmt->execute()){
+                echo "<div class='alert alert-success'>Employee account created successfully. Default password: ".$password. "</div>";
+            } else {
+                echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
+            }
+        } catch (Exception $e){
+            echo "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+        } finally {
+            $stmt->close();
+            $conn->close();
         }
     }
-
-    // Close statement and connection
-    $stmt->close();
-    $conn->close();
 }
 ?>

@@ -2,7 +2,7 @@
 $host_name = "localhost";
 $db_user = "root";
 $db_password = "";
-$db_name = "record";
+$db_name = "records-rex";
 
 $conn = new mysqli($host_name, $db_user, $db_password, $db_name);
 
