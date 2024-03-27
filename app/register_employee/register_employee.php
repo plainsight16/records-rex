@@ -1,13 +1,15 @@
 <?php
 require_once ('../db/dbconnect.php');
 
+session_start();
+
+
 if (isset($_POST['submit'])){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $password = $last_name;
     $role = 2;
-    // // $confirm_password = $_POST['confirm_password'];
 
     $errors = array();
 
@@ -31,16 +33,6 @@ if (isset($_POST['submit'])){
         $errors[] = "Email already exists";
     }
 
-    // // // Check if password is at least 8 characters
-    // // if (strlen($password) < 8){
-    // //     $errors[] = "Password must be at least 8 characters";
-    // // }
-
-    // // // Check if password matches
-    // // if ($password != $confirm_password){
-    // //     $errors[] = "Passwords do not match";
-    // // } 
-
     // Check if there are any errors
     if (count($errors) > 0){
         foreach ($errors as $error){
@@ -56,12 +48,17 @@ if (isset($_POST['submit'])){
             $stmt->bind_param("sssss", $first_name, $last_name, $email, $role, $password_hash);
     
             if ($stmt->execute()){
-                echo "<div class='alert alert-success'>Employee account created successfully. Default password: ".$password. "</div>";
+                $_SESSION['success'] = "Employee account created successfully. Default password: ".$password. "";
+                header("Location: index.php"); 
+                exit();
             } else {
-                echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
+                $_SESSION['error'] = "Account could not be created";
+                header("Location: index.php"); 
+                exit();
             }
         } catch (Exception $e){
-            echo "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+            // echo "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+            echo "error";
         } finally {
             $stmt->close();
             $conn->close();
