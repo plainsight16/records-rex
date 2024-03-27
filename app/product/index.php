@@ -70,6 +70,9 @@
                 </div>
 
                 <div class="product-tab">
+                    <?php
+                    include_once ('product.php');
+                    ?>
 
                 </div>
             </section>

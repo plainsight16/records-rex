@@ -198,3 +198,40 @@ table.blueTable thead {
     width: 30px;
     height: 30px;
 }
+
+.product-tab{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.product-box{
+    width: 250px;
+    height: 300px;
+    /* background-color: #d8f7cc; */
+    border-radius: 20px;
+    border: 1px solid var(--primary);
+}
+
+.img-box{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+    overflow: hidden;
+}
+
+.product-info{
+    margin-top: 10px;
+    padding: 5px;
+}
+.product-name{
+    font-weight: 700;
+    color: var(--primary);
+
+}
+.product-desc{
+    font-size: 13px;
+}
+.product-price{
+    margin-top: 20px;
+}
