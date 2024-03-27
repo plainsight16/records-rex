@@ -71,21 +71,17 @@
                 <table class="blueTable">
                     <thead>
                         <tr>
-                            <th>Ordered At</th>
-                            <th>Handled By</th>
-                            <th>Product</th>
-                            <th>Description</th>
                             <th>Warehouse</th>
-                            <th>Customer</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Action</th>
+                            <th>Location</th>
+                            <th>Product</th>
+                            <th>Total Quantity</th>
+                            <th>Capacity</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php
-                        include_once ('dashboard.php');
+                        include_once ('warehouse.php');
                         ?>
                     </tbody>
                 </table>

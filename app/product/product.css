@@ -1,6 +1,5 @@
 @import url('../base/app.css');
 
-
 body{
     background-color: #FFFFFF;
     max-height: 100%;
@@ -87,10 +86,10 @@ aside{
 table.blueTable {
     border: 1px solid var(--primary);
     background-color: #FFFFFF;
-    display: block;
+    /* display: block; */
     width: 100%;
-    height: 600px;
-    overflow: auto;
+    /* height: 600px; */
+    /* overflow: auto; */
 
     text-align: center;
     border-collapse: collapse;
