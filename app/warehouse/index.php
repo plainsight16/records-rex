@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="warehouse.css">
     <title>Dashboard</title>
 </head>
 
@@ -41,7 +42,7 @@
         <section class="table-main">
             <nav class="nav-body">
                 <div>
-                    <p class="nav-title">Records</p>
+                    <p class="nav-title">Warehouse</p>
                 </div>
                 <div class="user-info">
                     <p>Administrator, </p>
@@ -93,5 +94,6 @@
         </section>
     </main>
 
-</body>   
+</body>
+
 </html>
