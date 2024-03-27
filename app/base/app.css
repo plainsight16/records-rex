@@ -188,4 +188,43 @@ input::placeholder{
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+    color: #515864;
+  }
 
+a:visited{
+    text-decoration: none;
+    
+}
+
+.logo-title p{
+    font-size: 32px;
+    font-weight: 700;
+    padding-top: 20px;
+    
+    color: var(--primary);
+}
+
+
+.svg-box{
+    width: 30px;
+    height: 30px;
+}
+
+.logout{
+    color: #515864;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+
+.logout-icon{
+    width: 30px;
+    height: 30px;
+}
