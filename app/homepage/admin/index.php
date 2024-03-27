@@ -25,7 +25,7 @@ include_once "../../base/auth_middleware.php";
                     <li><a href="../../register_employee">Register Employee</a></li>
                 </ul>
 
-                <div onclick="" class="logout">    
+                <div class="logout">    
                     <p >
                         <a href="../../base/logout.php">Log Out</a>
                     </p>
