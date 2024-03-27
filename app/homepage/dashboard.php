@@ -13,4 +13,3 @@
 	}catch(mysqli_sql_exception $ex){
         echo "An Error Occured";
     }
-?>
