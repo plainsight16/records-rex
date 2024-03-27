@@ -1,3 +1,6 @@
+<?php
+include_once "../../base/auth_middleware.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,8 +25,10 @@
                     <li><a href="../../register_employee">Register Employee</a></li>
                 </ul>
 
-                <div class="logout">
-                    <p>Log out</p>
+                <div onclick="" class="logout">    
+                    <p >
+                        <a href="../../base/logout.php">Log Out</a>
+                    </p>
                     <div class="logout-icon">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                             fill="none">
@@ -46,12 +51,14 @@
                 </div>
                 <div class="user-info">
                     <?php
+                    // include "../../base/logout.php";
                     session_start();
                     $role = $_SESSION['role'];
-                    if ($role == 1) {
-                        echo "Administrator";
+                    echo $role;
+                    if ($role == 2) {
+                        echo "Employee, ";
                     } else {
-                        echo "Employee";
+                        echo "Admin, ";
                     }
                     echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
                     ?>

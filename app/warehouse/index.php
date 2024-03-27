@@ -20,10 +20,10 @@
                         <?php
                         session_start();
                         $role = $_SESSION['role'];
-                        if ($role == 1) {
-                            echo '<a href="../homepage/admin">Records</a>';
-                        } else {
+                        if ($role == 2) {
                             echo '<a href="../homepage/employee">Records</a>';
+                        } else {
+                            echo '<a href="../homepage/admin">Records</a>';
                         }
                         ?>
                     </li>
@@ -55,17 +55,17 @@
                     <p class="nav-title">Warehouse</p>
                 </div>
                 <div class="user-info">
-                <?php 
-                            session_start();
-                            $role = $_SESSION['role'];
-                            if ($role == 1){
-                                echo "Administrator";
-                            }
-                            else{
-                                echo "Employee";
-                            }
-                            echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
-                        ?>
+                    <?php
+                    session_start();
+                    $role = $_SESSION['role'];
+                    echo $role;
+                    if ($role == 2) {
+                        echo "Employee, ";
+                    } else {
+                        echo "Admin, ";
+                    }
+                    echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
+                    ?>
                     <div class="svg-box">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

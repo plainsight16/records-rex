@@ -21,10 +21,10 @@
                         <?php
                         session_start();
                         $role = $_SESSION['role'];
-                        if ($role == 1) {
-                            echo '<a href="../homepage/admin">Records</a>';
-                        } else {
+                        if ($role == 2) {
                             echo '<a href="../homepage/employee">Records</a>';
+                        } else {
+                            echo '<a href="../homepage/admin">Records</a>';
                         }
                         ?>
                     </li>
@@ -59,10 +59,11 @@
                     <?php
                     session_start();
                     $role = $_SESSION['role'];
-                    if ($role == 1) {
-                        echo "Administrator";
+                    // echo "$role";
+                    if ($role == 2) {
+                        echo "Employee, $role";
                     } else {
-                        echo "Employee";
+                        echo "Admin, $role";
                     }
                     echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
                     ?>

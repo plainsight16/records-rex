@@ -48,10 +48,11 @@
                     <?php
                     session_start();
                     $role = $_SESSION['role'];
-                    if ($role == 1) {
-                        echo "Administrator";
+                    echo $role;
+                    if ($role == 2) {
+                        echo "Employee, ";
                     } else {
-                        echo "Employee";
+                        echo "Admin, ";
                     }
                     echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
                     ?>
@@ -100,4 +101,5 @@
     </main>
 
 </body>
+
 </html>
