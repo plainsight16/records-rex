@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="warehouse.css">
     <title>Dashboard</title>
 </head>
 
@@ -17,8 +17,8 @@
             </div>
             <div class="nav-pages">
                 <ul>
-                    <li>homepage</li>
-                    <li><a href="../warehouse">Warehouse</a></li>
+                    <li><a href="../homepage">Homepage</a></li>
+                    <li>Warehouse</li>
                     <li>Products</li>
                 </ul>
 
@@ -42,7 +42,7 @@
         <section class="table-main">
             <nav class="nav-body">
                 <div>
-                    <p class="nav-title">Records</p>
+                    <p class="nav-title">Warehouse</p>
                 </div>
                 <div class="user-info">
                     <p>Administrator, </p>
