@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,14 +16,16 @@
             </div>
             <div class="nav-pages">
                 <ul>
-                    <li><a href="../homepage">Homepage</a></li>
-                    <li><a href="../warehouse">Warehouse</a></li>
-                    <li><a href="../product">Products</a></li>
-                    <li><a href="../register_employee">Register Employee</a></li>
+                    <li><a href="">Records</a></li>
+                    <li><a href="../../warehouse">Warehouse</a></li>
+                    <li><a href="../../product">Products</a></li>
+                    <!-- <li><a href="../../register_employee">Register Employee</a></li> -->
                 </ul>
 
                 <div class="logout">
-                    <p>Log out</p>
+                    <p>
+                        <a href="../../base/logout.php">Log Out</a>
+                    </p>
                     <div class="logout-icon">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                             fill="none">
@@ -44,8 +47,17 @@
                     <p class="nav-title">Records</p>
                 </div>
                 <div class="user-info">
-                    <p>Administrator, </p>
-                    <p>John Doe</p>
+                    <?php
+                    session_start();
+                    $role = $_SESSION['role'];
+                    echo $role;
+                    if ($role == 2) {
+                        echo "Employee, ";
+                    } else {
+                        echo "Admin, ";
+                    }
+                    echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
+                    ?>
                     <div class="svg-box">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -62,10 +74,6 @@
             <section>
                 <div class="search-section">
                     <input type="text" name="search" class="search-opt" id="filter" placeholder="Search">
-                    <div>
-                        <button class="search-btn" type="submit">Go</button>
-                    </div>
-
                 </div>
                 <table class="blueTable" id="resultTable">
                     <thead>
@@ -78,7 +86,6 @@
                             <th>Customer</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -92,7 +99,13 @@
 
         </section>
     </main>
+<<<<<<< HEAD:app/homepage/index.php
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/application.js"></script>
 </body> 
+=======
+
+</body>
+
+>>>>>>> main:app/homepage/employee/index.php
 </html>

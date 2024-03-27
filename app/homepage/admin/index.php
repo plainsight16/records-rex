@@ -1,10 +1,13 @@
+<?php
+include_once "../../base/auth_middleware.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="warehouse.css">
+    <link rel="stylesheet" href="homepage.css">
     <title>Dashboard</title>
 </head>
 
@@ -16,24 +19,14 @@
             </div>
             <div class="nav-pages">
                 <ul>
-                    <li>
-                        <?php
-                        session_start();
-                        $role = $_SESSION['role'];
-                        if ($role == 2) {
-                            echo '<a href="../homepage/employee">Records</a>';
-                        } else {
-                            echo '<a href="../homepage/admin">Records</a>';
-                        }
-                        ?>
-                    </li>
-                    <li><a href="../warehouse">Warehouse</a></li>
-                    <li><a href="../product">Products</a></li>
-                    <!-- <li><a href="../register_employee">Register Employee</a></li> -->
+                    <li><a href="">Records</a></li>
+                    <li><a href="../../warehouse">Warehouse</a></li>
+                    <li><a href="../../product">Products</a></li>
+                    <li><a href="../../register_employee">Register Employee</a></li>
                 </ul>
 
-                <div class="logout">
-                    <p>
+                <div class="logout">    
+                    <p >
                         <a href="../../base/logout.php">Log Out</a>
                     </p>
                     <div class="logout-icon">
@@ -54,10 +47,11 @@
         <section class="table-main">
             <nav class="nav-body">
                 <div>
-                    <p class="nav-title">Warehouse</p>
+                    <p class="nav-title">Records</p>
                 </div>
                 <div class="user-info">
                     <?php
+                    // include "../../base/logout.php";
                     session_start();
                     $role = $_SESSION['role'];
                     echo $role;
@@ -83,22 +77,28 @@
             </nav>
             <section>
                 <div class="search-section">
-                    <input type="text" name="search" class="search-opt" id="filter" placeholder="Search">
+                    <input type="text" name="search" class="search-opt" placeholder="Search">
+
+
                 </div>
-                <table class="blueTable" id="resultTable">
+                <table class="blueTable">
                     <thead>
                         <tr>
-                            <th>Warehouse</th>
-                            <th>Location</th>
+                            <th>Ordered At</th>
+                            <th>Handled By</th>
                             <th>Product</th>
-                            <th>Total Quantity</th>
-                            <th>Capacity</th>
+                            <th>Description</th>
+                            <th>Warehouse</th>
+                            <th>Customer</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php
-                        include_once ('warehouse.php');
+                        include_once ('dashboard.php');
                         ?>
                     </tbody>
                 </table>
@@ -108,5 +108,4 @@
     </main>
 
 </body>
-
 </html>
