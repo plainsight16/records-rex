@@ -211,6 +211,7 @@ table.blueTable thead {
     /* background-color: #d8f7cc; */
     border-radius: 20px;
     border: 1px solid var(--primary);
+    overflow: hidden;
 }
 
 .img-box{
@@ -238,4 +239,6 @@ table.blueTable thead {
 
 .product-img{
     height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
