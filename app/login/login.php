@@ -1,6 +1,8 @@
 <?php
 require_once ('../db/dbconnect.php');
 
+session_start();
+
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -18,14 +20,17 @@ if (isset($_POST['submit'])) {
             header('Location: ../homepage/index.php');
             exit();
         } else {
-            echo "<div class='alert alert-danger'>Password does not match</div>";
+            $_SESSION['error'] = "Invalid username or password";
+            header("Location: ../../index.php"); // Redirect back to login page
+            exit();
         }
 
     } else {
-        echo "<div class='alert alert-danger'>Email does not exist. Contact Admin</div>";
+        $_SESSION['error'] = "Invalid username or password";
+            header("Location: ../../index.php"); // Redirect back to login page
+            exit();
     }
 
     $stmt->close();
     $conn->close();
 }
-?>

@@ -10,16 +10,16 @@
 
 <body>
     <main class="main-page">
-
         <aside>
             <div class="logo-title">
                 <p>R</p>
             </div>
             <div class="nav-pages">
                 <ul>
-                    <li>homepage</li>
+                    <li><a href="../homepage">Homepage</a></li>
                     <li><a href="../warehouse">Warehouse</a></li>
-                    <li>Products</li>
+                    <li><a href="../product">Products</a></li>
+                    <li><a href="../register_employee">Register Employee</a></li>
                 </ul>
 
                 <div class="logout">
