@@ -1,0 +1,8 @@
+@import url('../base/app.css');
+
+
+.error-msg{
+    font-size: 13px;
+    text-align: center;
+    color: red;
+}
