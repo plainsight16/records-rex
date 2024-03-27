@@ -1,5 +1,5 @@
 <?php
-include_once ("../db/dbconnect.php");
+include_once ("../../db/dbconnect.php");
 $sql = "SELECT * FROM `record`;";
 
 $result = mysqli_query($conn, $sql);
