@@ -235,3 +235,7 @@ table.blueTable thead {
 .product-price{
     margin-top: 20px;
 }
+
+.product-img{
+    height: 100%;
+}

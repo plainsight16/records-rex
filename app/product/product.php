@@ -1,7 +1,6 @@
 <?php
 include_once ("../db/dbconnect.php");
 
-
 $sql = "select * from product;";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
@@ -9,7 +8,9 @@ if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="product-box">
             <div class="img-box">
-                <img src="" alt="">
+                <img src=<?php
+                echo $rows['image']
+                ?> alt="product" class="product-img">
             </div>
             <div class="product-info">
                 <p class="product-name">
@@ -22,25 +23,9 @@ if (mysqli_num_rows($result) > 0) {
                     $<?php echo $rows['Price']; ?>
                 </p>
             </div>
-
         </div>
         <?php
     }
 }
 
-
-
-// try{
-// $result = mysqli_query($conn, $sql);
-// if(mysqli_num_rows($result) > 0){
-// while($row = mysqli_fetch_assoc($result)){
-// echo $row["Name"] . "<br>";
-// echo $row["Description"] . "<br>";
-// echo $row["Price"] . "<br>";
-// }
-
-// }
-
-// }catch(mysqli_sql_exception $ex){
-// echo "Can't retrieve products";
-// }
+?>

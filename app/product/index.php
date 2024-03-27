@@ -73,7 +73,6 @@
                     <?php
                     include_once ('product.php');
                     ?>
-
                 </div>
             </section>
 
@@ -81,5 +80,4 @@
     </main>
 
 </body>
-
 </html>
