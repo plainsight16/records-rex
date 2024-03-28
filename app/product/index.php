@@ -1,3 +1,6 @@
+<?php
+    include_once "../base/auth_middleware.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +22,7 @@
                     <li>
                         <!-- <a href="../homepage/admin">Records</a> -->
                         <?php
-                        session_start();
-                        $role = $_SESSION['role'];
-                        if ($role == 2) {
-                            echo '<a href="../homepage/employee">Records</a>';
-                        } else {
-                            echo '<a href="../homepage/admin">Records</a>';
-                        }
+                            include_once "../base/auth_reroute.php";
                         ?>
                     </li>
                     <li><a href="../warehouse">Warehouse</a></li>
@@ -59,15 +56,7 @@
                 </div>
                 <div class="user-info">
                     <?php
-                    session_start();
-                    $role = $_SESSION['role'];
-                    // echo "$role";
-                    if ($role == 2) {
-                        echo "Employee, $role";
-                    } else {
-                        echo "Admin, $role";
-                    }
-                    echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
+                        include_once "../base/auth_role.php";
                     ?>
                     <div class="svg-box">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"

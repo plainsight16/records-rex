@@ -1,5 +1,6 @@
 <?php
 include_once "../../base/auth_middleware.php";
+include_once "../../base/auth_admin.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ include_once "../../base/auth_middleware.php";
                     <li><a href="../../register_employee">Register Employee</a></li>
                 </ul>
 
-                <div class="logout">    
+                <div class="logout">
                     <p >
                         <a href="../../base/logout.php">Log Out</a>
                     </p>
@@ -51,16 +52,7 @@ include_once "../../base/auth_middleware.php";
                 </div>
                 <div class="user-info">
                     <?php
-                    // include "../../base/logout.php";
-                    session_start();
-                    $role = $_SESSION['role'];
-                    echo $role;
-                    if ($role == 2) {
-                        echo "Employee, ";
-                    } else {
-                        echo "Admin, ";
-                    }
-                    echo $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"];
+                        include_once "../../base/auth_role.php";
                     ?>
                     <div class="svg-box">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
