@@ -9,7 +9,6 @@ Record-rex is a simple, yet powerful, PHP-based application designed for efficie
 - **CRUD Operations**: Create, Read, Update, and Delete records easily through a user-friendly interface.
 - **Search Functionality**: Quickly find records with a powerful search feature.
 - **Export Options**: Export records to CSV or PDF for offline usage.
-- **Responsive Design**: Accessible from any device with a web browser.
 
 ## Getting Started
 
