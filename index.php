@@ -48,14 +48,3 @@ session_destroy();
 </body>
 
 </html>
-
-
-<!-- <form action="../records-rex/app/login/login.php" method="post">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email" required>
-                        
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" required>
-                        
-                        <input type="submit" name="submit" value="Log In">
-                    </form> -->

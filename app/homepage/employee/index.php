@@ -73,11 +73,9 @@
             </nav>
             <section>
                 <div class="search-section">
-                    <input type="text" name="search" class="search-opt" placeholder="Search">
-
-
+                    <input type="text" name="search" class="search-opt" id="filter" placeholder="Search">
                 </div>
-                <table class="blueTable">
+                <table class="blueTable" id="resultTable">
                     <thead>
                         <tr>
                             <th>Ordered At</th>
@@ -101,7 +99,7 @@
 
         </section>
     </main>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../js/application.js"></script>
 </body>
-
 </html>
