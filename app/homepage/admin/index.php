@@ -98,7 +98,44 @@ include_once "../../base/auth_admin.php";
 
         </section>
     </main>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../../js/application.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../js/application.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+
+        $(".delbutton").click(function(){
+
+        //Save the link in a variable called element
+        var element = $(this);
+
+        //Find the id of the link that was clicked
+        var del_id = element.attr("id");
+
+        //Built a url to send
+        var info = 'id=' + del_id;
+        if(confirm("Sure you want to delete this update? There is NO undo!"))
+                {
+
+        $.ajax({
+        type: "GET",
+        url: "deleterecord.php",
+        data: info,
+        success: function(){
+        
+        }
+        });
+                $(this).parents(".record").animate({ backgroundColor: "#fbc7c7" }, "fast")
+                .animate({ opacity: "hide" }, "slow");
+
+        }
+
+        return false;
+
+        });
+
+        });
+    </script>
 </body>
 </html>
