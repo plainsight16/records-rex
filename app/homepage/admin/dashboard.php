@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
             <td>
                 <?php echo $rows['Quantity']; ?>
             </td>
-            <td><a href="editform.php?id=<?php echo $row['id']; ?>"> Edit </a> | <a href="#" id="<?php echo $row['id']; ?>"
+            <td><a href="#" id="<?php echo $row['id']; ?>"
                     class="delbutton" title="Click To Delete">Delete</a>
             </td>
         </tr>
