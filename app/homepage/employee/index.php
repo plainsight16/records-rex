@@ -99,13 +99,7 @@
 
         </section>
     </main>
-<<<<<<< HEAD:app/homepage/index.php
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../js/application.js"></script>
-</body> 
-=======
-
+<script src="../../js/application.js"></script>
 </body>
-
->>>>>>> main:app/homepage/employee/index.php
 </html>
