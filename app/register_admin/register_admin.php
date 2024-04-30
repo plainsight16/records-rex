@@ -46,7 +46,7 @@ if (isset($_POST['submit'])){
         foreach ($errors as $error){
             echo "<div class='alert alert-danger'>$error</div>";
         }
-    } else {
+    } else{
         // // Hash password
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
