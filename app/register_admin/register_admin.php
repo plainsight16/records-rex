@@ -31,7 +31,7 @@ if (isset($_POST['submit'])){
         $errors[] = "Email already exists";
     }
 
-    // // Check if password is at least 8 characters
+    //
     // if (strlen($password) < 8){
     //     $errors[] = "Password must be at least 8 characters";
     // }
