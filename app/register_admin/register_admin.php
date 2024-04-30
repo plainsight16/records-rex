@@ -36,10 +36,7 @@ if (isset($_POST['submit'])){
     //     $errors[] = "Password must be at least 8 characters";
     // }
 
-    // // Check if password matches
-    // if ($password != $confirm_password){
-    //     $errors[] = "Passwords do not match";
-    // } 
+    
 
     // Check if there are any errors
     if (count($errors) > 0){
