@@ -38,7 +38,7 @@ if (isset($_POST['submit'])){
 
     
 
-    // Check if there are any errors
+    
     if (count($errors) > 0){
         foreach ($errors as $error){
             echo "<div class='alert alert-danger'>$error</div>";
